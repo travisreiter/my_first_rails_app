@@ -68,7 +68,7 @@ Rails.application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
-  config.i18n.fallbacks = true
+  config.i18n.fallbacks = [I18n.default_locale]
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
@@ -109,6 +109,6 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-
+  config.require_master_key = true 
   config.secret_key_base = ENV["SECRET_KEY_BASE"]  
 end
